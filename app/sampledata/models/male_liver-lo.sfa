@@ -1,0 +1,49 @@
+{
+  materials: [
+    {
+      name: 'liver',
+      parameters: [
+        {
+          baseColor: 'd_liver',
+        },
+        {
+          baseColorTint: [
+            0.45882400000000001,
+            0.168627,
+            0.168627,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 0.242536,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+    ],
+    collision: {},
+    file: 'sampledata/models/male_liver-lo.obj',
+    name: 'male_liver-lo',
+    recenter: 'root',
+  },
+  samplers: [
+    {
+      file: 'sampledata/models\\d_liver.jpg',
+      name: 'd_liver',
+      pipeline_name: 'd_liver.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

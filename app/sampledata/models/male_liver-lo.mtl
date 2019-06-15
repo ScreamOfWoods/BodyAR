@@ -1,0 +1,14 @@
+# 
+# Wavefront material file
+# Converted by the DEEP Exploration  3.5.10.1242
+# Right Hemisphere, LTD
+# http://www.righthemisphere.com/
+# 
+
+newmtl liver
+Ka 0 0 0
+Kd 0.458824 0.168627 0.168627
+Ks 0.137647 0.0505882 0.0505882
+illum 2
+Ns 32
+map_Kd d_liver.jpg
