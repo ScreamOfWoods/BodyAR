@@ -1,0 +1,179 @@
+{
+  materials: [
+    {
+      name: 'ascending_aorta',
+      parameters: [
+        {
+          baseColor: 'cv_heart',
+        },
+        {
+          baseColorTint: [
+            0.92549000000000003,
+            0.20000000000000001,
+            0.21568599999999999,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 0.088044999999999998,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'left_atrium',
+      parameters: [
+        {
+          baseColor: 'cv_heart',
+        },
+        {
+          baseColorTint: [
+            0.95294100000000004,
+            0.46274500000000002,
+            0.47450999999999999,
+            1,
+          ],
+        },
+        {
+          metallic: 1,
+        },
+        {
+          roughness: 0.447214,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'right_ventricle',
+      parameters: [
+        {
+          baseColor: 'cv_heart',
+        },
+        {
+          baseColorTint: [
+            0.90196100000000001,
+            0.35686299999999999,
+            0.50980400000000003,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 0.088044999999999998,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'left_ventricle',
+      parameters: [
+        {
+          baseColor: 'cv_heart',
+        },
+        {
+          baseColorTint: [
+            0.93725499999999995,
+            0.32156899999999999,
+            0.33725500000000003,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 0.088044999999999998,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'pulmonary_trunk',
+      parameters: [
+        {
+          baseColor: 'cv_heart',
+        },
+        {
+          baseColorTint: [
+            0.33333299999999999,
+            0.36078399999999999,
+            0.60784300000000002,
+            1,
+          ],
+        },
+        {
+          metallic: 1,
+        },
+        {
+          roughness: 0.447214,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'superior_vena_cava',
+      parameters: [
+        {
+          baseColor: 'cv_heart',
+        },
+        {
+          baseColorTint: [
+            0,
+            0.25097999999999998,
+            0.50196099999999999,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 0.088044999999999998,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+    ],
+    collision: {},
+    file: 'sampledata/models/male_heart-lo.obj',
+    name: 'male_heart-lo',
+    recenter: 'root',
+  },
+  samplers: [
+    {
+      file: 'sampledata/models\\cv_heart.jpg',
+      name: 'cv_heart',
+      pipeline_name: 'cv_heart.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

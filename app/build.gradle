@@ -40,3 +40,13 @@ sceneform.asset('sampledata/models/male_liver-lo.obj',
         'default',
         'sampledata/models/male_liver-lo.sfa',
         'src/main/assets/male_liver-lo')
+
+sceneform.asset('sampledata/models/male_heart-lo.obj',
+        'default',
+        'sampledata/models/male_heart-lo.sfa',
+        'src/main/assets/models/male_heart-lo')
+
+sceneform.asset('sampledata/models/male_bronchus-lo.obj',
+        'default',
+        'sampledata/models/male_bronchus-lo.sfa',
+        'src/main/assets/male_bronchus-lo')

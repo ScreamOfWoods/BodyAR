@@ -23,8 +23,7 @@ import java.io.InputStream;
 public class AugmentedImageFragment extends ArFragment {
 
     private static final String TAG = "BodyAR_AIF";
-    //private static final String IMAGE_DATABASE = "body.imgdb";
-    private static final String IMAGE_DATABASE = "qr.imgdb";
+    private static final String IMAGE_DATABASE = "body.imgdb";
     private static final double MIN_OPENGL_VERSION = 3.0;
 
     @Override
