@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity">
 
     <fragment android:name="com.example.atanas.bodyar.AugmentedImageFragment"
@@ -15,9 +16,20 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:scaleType="fitCenter"
-        android:src="@drawable/fit_to_scan"
         android:contentDescription="@string/fit_image_to_scan"
-        />
+        android:scaleType="fitCenter"
+        android:src="@drawable/fit_to_scan" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/deleteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        app:layout_anchorGravity="end|bottom"
+        android:layout_marginBottom="50dp"
+        android:layout_marginRight="25dp"
+        android:tint="@color/colorGreenWhite"
+        android:clickable="true"
+        app:srcCompat="@android:drawable/ic_delete"/>
 
 </FrameLayout>

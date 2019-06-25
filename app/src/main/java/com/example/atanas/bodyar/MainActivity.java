@@ -1,5 +1,6 @@
 package com.example.atanas.bodyar;
 
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,24 +20,29 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static boolean deleteFlag = false;
     private final static String TAG = "BodyAR_Main";
-
     private ArFragment arFragment;
     private ImageView fitToScanView;
+    private AugmentedImageNode node;
+    private FloatingActionButton deleteButton;
 
-    private final Map<AugmentedImage, AugmentedImageNode> augmentedImageMap = new HashMap<>();
+    public static final Map<AugmentedImage, AugmentedImageNode> augmentedImageMap = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Log.e(TAG, "Opened app");
+        deleteButton = findViewById(R.id.deleteButton);
+        setDeleteListener();
 
         arFragment = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.ux_fragment);
         fitToScanView = findViewById(R.id.image_view_fit_to_scan);
 
         arFragment.getArSceneView().getScene().addOnUpdateListener(this::onUpdateFrame);
+
+        node = new AugmentedImageNode(this, arFragment);
     }
 
     @Override
@@ -58,28 +64,35 @@ public class MainActivity extends AppCompatActivity {
         if (frame == null || frame.getCamera().getTrackingState() != TrackingState.TRACKING) {
             return;
         }
+
         Collection<AugmentedImage> updatedAugmentedImages =
                 frame.getUpdatedTrackables(AugmentedImage.class);
+
         for (AugmentedImage augmentedImage : updatedAugmentedImages) {
             switch (augmentedImage.getTrackingState()) {
                 case PAUSED:
                     // When an image is in PAUSED state, but the camera is not PAUSED, it has been detected,
                     // but not yet tracked.
-                    String text = "Detected Image " + augmentedImage.getName();
+                    String text = "Разпознато изображение " + augmentedImage.getName();
                     Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
                     break;
 
                 case TRACKING:
                     // Have to switch to UI Thread to update View.
-                    Log.e(TAG, "Maybe we have something");
                     fitToScanView.setVisibility(View.GONE);
 
                     // Create a new anchor for newly found images.
                     if (!augmentedImageMap.containsKey(augmentedImage)) {
-                        AugmentedImageNode node = new AugmentedImageNode(this);
                         node.setImage(augmentedImage);
                         augmentedImageMap.put(augmentedImage, node);
                         arFragment.getArSceneView().getScene().addChild(node);
+                    }
+
+                    if(augmentedImage.getAnchors().isEmpty()){
+                        if(augmentedImage.getTrackingMethod() == AugmentedImage.TrackingMethod.FULL_TRACKING) {
+                            node.setImage(augmentedImage);
+                            arFragment.getArSceneView().getScene().addChild(node);
+                        }
                     }
                     break;
 
@@ -90,4 +103,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private void setDeleteListener(){
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                deleteFlag = true;
+            }
+        });
+    }
 }
