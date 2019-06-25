@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">BodyAR</string>
-    <string name="fit_image_to_scan">Fit image to scan</string>
+    <string name="fit_image_to_scan">Вкарайте изображението в рамката</string>
+    <string name="liver_info">Черният дроб е пречиствателната станция на човешкото тяло.</string>
+    <string name="heart_info">Сърцето изпомпва кръвта към всяка една част на тялото.</string>
+    <string name="bronchus_info">Бронхите са проход към дихателните пътища,
+                                които провеждат въздух в белите дробове.</string>
+    <string name="digestive_info">Храносмилателната система разгражда и абсорбира храната.</string>
+    <string name="spine_info">Гръбначният стълб е главната опорна ос на човешкото тяло.</string>
 </resources>
